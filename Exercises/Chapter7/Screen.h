@@ -16,9 +16,42 @@ private:
 public:
 	Screen() = default;
 	Screen(unsigned h, unsigned w) : 
-				height(h), weight(w), contents(h * w, ' ') {}
+				height(h), width(w), contents(h * w, ' ') {}
 	Screen(unsigned h, unsigned w, char c) : 
-				height(h), weight(w), contents(h * w, c) {}
+				height(h), width(w), contents(h * w, c) {}
+
+	Screen &set(char c)
+	{
+		contents[cursor] = c;
+		return *this;
+	}
+	
+	Screen &set(unsigned r, unsigned col, char ch)
+	{
+		contents[r*width + col] = ch;
+		return *this;
+	}
+	
+	Screen &move(unsigned r, unsigned c)
+	{
+		unsigned row = r * width;
+		cursor = row + c;
+		return *this;
+	}
+
+	Screen &display(ostream &os)
+	{
+		for (int i = 0; i < height; ++i)
+		{
+			for (int j = 0; j < width; ++j)
+			{
+				os << contents[i*width+j];
+			}
+			cout << endl;
+		}
+
+		return *this;
+	}
 };
 
 #endif
