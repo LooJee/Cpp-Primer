@@ -11,6 +11,15 @@ public:
 	unsigned units_sold = 0;	//total sold
 	double price = 0.0;			//price of book
 public:
+	Sales_data() = default;
+	Sales_data(const string &s) : bookNo(s){}
+	Sales_data(const string &s, unsigned n, double p) : 
+							bookNo(s), units_sold(n), price(p){}
+	Sales_data(istream &is)
+	{
+		is >> bookNo >> units_sold >> price;
+	}
+
 	string isbn() const
 	{
 		return bookNo;

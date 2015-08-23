@@ -10,6 +10,10 @@ private:
 	string name;
 	string address;
 public:
+	Person() = default;
+	Person(const string &n, const string &a) : 
+				name(n), address(a){}
+
 	string GetName() const {return name;}
 	string GetAddress() const {return address;}
 };
