@@ -14,4 +14,7 @@ public:
 	string GetAddress() const {return address;}
 };
 
+istream &read(istream &is, Person &per);
+ostream &print(ostream &os, const Prson &per);
+
 #endif
