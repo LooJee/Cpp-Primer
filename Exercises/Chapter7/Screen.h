@@ -5,6 +5,13 @@
 #include <string>
 #include <vector>
 using namespace std;
+class Screen;
+class Window_mgr{
+private:
+	vector<Screen> screens;
+public:
+	void clear(unsigned i);
+};
 
 class Screen{
 private:
@@ -52,6 +59,14 @@ public:
 
 		return *this;
 	}
+
+	friend void Window_mgr::clear(unsigned i);
 };
+
+void Window_mgr::clear(unsigned i)
+{
+	Screen &s = screens[i];
+	s.contents = string(s.height * s.width, ' ');
+}
 
 #endif
