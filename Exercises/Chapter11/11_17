@@ -1,0 +1,4 @@
+copy(v.begin(), v.end(), inserter(c, c.end())); //legal
+copy(v.begin(), v.end(), back_inserter(c)); //illegal, set doesn't have the member push_back
+copy(c.begin(), c.end(), inserter(v, v.end())); //legal
+copy(c.begin(), c.end(), back_inserter(v)); //legal
