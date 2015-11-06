@@ -1,0 +1,5 @@
+map<int, int> m;
+m[0] = 1; //if the key 0 is existed in m, replace the value of key 0 with 1;else insert the new element value 1 with key 0
+
+vector<int> v;
+v[0] = 1;// if the index 0 is existed, replace the value of the index 0 with 1, and never insert a new value
