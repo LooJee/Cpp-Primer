@@ -1,0 +1,2 @@
+std::pair<string, vector<int>> // type as an argument
+std::pair<map<string, vector<int>>::iterator, bool> // type as the return value
