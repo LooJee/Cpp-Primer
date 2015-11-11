@@ -1,0 +1,5 @@
+What happens if we execute the following code?
+auto sp = make_shared<int>();
+auto p = sp.get();
+delete p;
+//p will be freed, and sp become a dangle pointer

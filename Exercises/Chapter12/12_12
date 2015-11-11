@@ -1,0 +1,7 @@
+auto p = new int();
+auto sp = make_shared<int>();
+
+(a) process(sp); //legal. Pass the sp to process as copy 
+(b) process(new int()); //illegal. Can't pass the object created by new to process
+(c) process(p); //illegal. Can't pass the pointer returned by new to process.
+(d) process(shared_ptr<int>(p)); //legal but dangerous. Create a temporary shared_ptr and pass it to process, after call process, the temporary will freed, then p become a dangling pointer
